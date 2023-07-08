@@ -7,7 +7,8 @@ namespace trader
     public partial class Form1 : Form
     {
         int contador1 = 0;
-        int contador2 = 0;
+        int contadorWin = 0;
+        int contadorLoss = 0;
 
         private Random random = new Random();
 
@@ -30,10 +31,24 @@ namespace trader
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
-           
-            listBox1.Text = listBox1.Items.Count.ToString();
+            contador1++;
+            label1.Text = "Contagem: " + contador1;
+
             string number = lblNumber.Text;
-            listBox1.Items.Insert(0,$"-{number}");
+
+            if (number == "0")
+            {
+                listBox1.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "1")
+            {
+                listBox1.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
+
+            labelWinCount.Text = "Wins: " + contadorWin;
+            labelLossCount.Text = "Losses: " + contadorLoss;
         }
 
        
@@ -50,9 +65,19 @@ namespace trader
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox2.Text = listBox2.Items.Count.ToString();
+            
             string number = lblNumber.Text;
-            listBox2.Items.Insert(0, $"-{number}");
+
+            if (number == "0")
+            {
+                listBox2.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "1")
+            {
+                listBox2.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
         }
 
         private void ButtonClear_Click(object sender, EventArgs e)
@@ -70,9 +95,24 @@ namespace trader
         {
             contador1++;
             label1.Text = "Contagem: " + contador1;
-            listBox2.Items.Insert(0,lblNumber.Text);
-            listBox1.Items.Insert(0,lblNumber.Text);
-            string number = "-" + lblNumber.Text;
+
+            string number = lblNumber.Text;
+
+            if (number == "0")
+            {
+                listBox1.Items.Insert(0, "LOSS");
+                listBox2.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "1")
+            {
+                listBox1.Items.Insert(0, "WIN");
+                listBox2.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
+
+            labelWinCount.Text = "Wins: " + contadorWin;
+            labelLossCount.Text = "Losses: " + contadorLoss;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -80,13 +120,128 @@ namespace trader
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             contador1 = 0;
+            contadorWin = 0;
+            contadorLoss = 0;
             label1.Text = "Contagem: 0";
+            labelWinCount.Text = "Contagem: 0";
+            labelLossCount.Text = "Contagem: 0";
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
      
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            contador1++;
+            label1.Text = "Contagem: " + contador1;
+
+            string number = lblNumber.Text;
+
+            if (number == "1")
+            {
+                listBox1.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "0")
+            {
+                listBox1.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
+
+            labelWinCount.Text = "Wins: " + contadorWin;
+            labelLossCount.Text = "Losses: " + contadorLoss;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string number = lblNumber.Text;
+
+            if (number == "1")
+            {
+                listBox2.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "0")
+            {
+                listBox2.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string number = lblNumber.Text;
+
+            if (number == "0")
+            {
+                listBox3.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "1")
+            {
+                listBox3.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string number = lblNumber.Text;
+
+            if (number == "1")
+            {
+                listBox3.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "0")
+            {
+                listBox3.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string number = lblNumber.Text;
+
+            if (number == "0")
+            {
+                listBox2.Items.Insert(0, "LOSS");
+                listBox3.Items.Insert(0, "LOSS");
+                contadorLoss++;
+            }
+            else if (number == "1")
+            {
+                listBox2.Items.Insert(0, "WIN");
+                listBox3.Items.Insert(0, "WIN");
+                contadorWin++;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string number = lblNumber.Text;
+
+            if (number == "0")
+            {
+                listBox2.Items.Insert(0, "LOSS");
+                listBox3.Items.Insert(0, "WIN");
+                contadorLoss++;
+            }
+            else if (number == "1")
+            {
+                listBox2.Items.Insert(0, "WIN");
+                listBox3.Items.Insert(0, "LOSS");
+                contadorWin++;
+            }
         }
     }
 }
